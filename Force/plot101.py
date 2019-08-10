@@ -22,18 +22,20 @@ def go3():
 
    print("data.shape",x1.shape)
 
-   ax1 = plt.subplot(3,1,1)
+   #fig, (ax1,ax2,ax3) = plt.subplots(3,1,sharex='col')
+   
+   ax1 = plt.subplot(311)
    plt.title('SignalHistory')
    plt.plot(t,x1)
    plt.ylabel('Force')
    ax1.set_ylim([-5,5])
 
-   ax2 = plt.subplot(3,1,2)
+   ax2 = plt.subplot(312,sharex = ax1)
    plt.plot(t,pwm)
    plt.ylabel('PWM')
    ax2.set_ylim([-200,1000])
 
-   ax3 = plt.subplot(3,1,3)
+   ax3 = plt.subplot(313,sharex = ax1)
    plt.plot(t,vstop)
    plt.xlabel('time')
    plt.ylabel('VSTOP')
