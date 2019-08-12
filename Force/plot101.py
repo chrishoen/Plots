@@ -6,15 +6,16 @@ print("hello")
 file_path = "./myforcelog.csv"
 
 def go1():
-   t, x1, pwm, vstop = np.loadtxt(file_path, delimiter=",", unpack=True)
+   t, x1 = np.loadtxt(file_path, delimiter=",", unpack=True)
 
    print("data.shape",x1.shape)
 
-   plt.plot(t,x1)
-
-   plt.xlabel('time')
-   plt.ylabel('x1')
+   ax1 = plt.subplot(111)
    plt.title('SignalHistory')
+   plt.plot(t,x1)
+   plt.ylabel('Force')
+   ax1.set_ylim([-3,1])
+   
    plt.show()
 
 def go3():
